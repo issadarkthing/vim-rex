@@ -60,3 +60,8 @@ for item in ['insert', 'replace', 'visual', 'inactive', 'ctrlp']
     exe "let pal.".item.suffix. " = pal.normal"
   endfor
 endfor
+
+
+" enable pointed arrow
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
