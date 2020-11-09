@@ -1,66 +1,109 @@
-scriptencoding utf-8
+" Color palette
+let s:gui_dark_gray = '#303030'
+let s:cterm_dark_gray = 44
+let s:gui_med_gray_hi = '#444444'
+let s:cterm_med_gray_hi = 235
+let s:gui_med_gray_lo = '#3a3a3a'
+let s:cterm_med_gray_lo = 237
+let s:gui_light_gray = '#b2b2b2'
+let s:cterm_light_gray = 249
+let s:gui_green = '#005f87'
+let s:cterm_green = 12
+let s:gui_blue = '#87afd7'
+let s:cterm_blue = 25
+let s:gui_purple = '#afafd7'
+let s:cterm_purple = 146
+let s:gui_orange = '#ffaf87'
+let s:cterm_orange = 216
+let s:gui_red = '#d78787'
+let s:cterm_red = 174
+let s:gui_pink = '#d7afd7'
+let s:cterm_pink = 133
 
-" This is a copy of the dark.vim theme, however it does not change colors in
-" the different modes, so should bring some performance improvements because
-" airline does not have to redefine highlighting groups after they have been
-" setup once.
+let g:airline#themes#angr#palette = {}
 
-" Each theme is contained in its own file and declares variables scoped to the
-" file.  These variables represent the possible "modes" that airline can
-" detect.  The mode is the return value of mode(), which gets converted to a
-" readable string.  The following is a list currently supported modes: normal,
-" insert, replace, visual, and inactive.
-"
-" Each mode can also have overrides.  These are small changes to the mode that
-" don't require a completely different look.  "modified" and "paste" are two
-" such supported overrides.  These are simply suffixed to the major mode,
-" separated by an underscore.  For example, "normal_modified" would be normal
-" mode where the current buffer is modified.
-"
-" The theming algorithm is a 2-pass system where the mode will draw over all
-" parts of the statusline, and then the override is applied after.  This means
-" it is possible to specify a subset of the theme in overrides, as it will
-" simply overwrite the previous colors.  If you want simultaneous overrides,
-" then they will need to change different parts of the statusline so they do
-" not conflict with each other.
-"
-" First, let's define an empty dictionary and assign it to the "palette"
-" variable. The # is a separator that maps with the directory structure. If
-" you get this wrong, Vim will complain loudly.
-let g:airline#themes#rex#palette = {}
-
-" First let's define some arrays. The s: is just a VimL thing for scoping the
-" variables to the current script. Without this, these variables would be
-" declared globally. Now let's declare some colors for normal mode and add it
-" to the dictionary.  The array is in the format:
-" [ guifg, guibg, ctermfg, ctermbg, opts ]. See "help attr-list" for valid
-" values for the "opt" value.
-let s:N1   = [ '#00005f' , '#dfff00' , 233 , 2 ]
-let s:N2   = [ '#ffffff' , '#444444' , 85  , 12 ]
-let s:N3   = [ '#9cffd3' , '#202020' , 85  , 12 ]
-let g:airline#themes#rex#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
-" Accents are used to give parts within a section a slightly different look or
-" color. Here we are defining a "red" accent, which is used by the 'readonly'
-" part by default. Only the foreground colors are specified, so the background
-" colors are automatically extracted from the underlying section colors. What
-" this means is that regardless of which section the part is defined in, it
-" will be red instead of the section's foreground color. You can also have
-" multiple parts with accents within a section.
-let g:airline#themes#rex#palette.accents = {
-      \ 'red': [ '#ff0000' , '' , 160 , ''  ]
+" Normal mode
+let s:N1 = [s:gui_dark_gray, s:gui_green, s:cterm_dark_gray, s:cterm_green]
+let s:N2 = [s:gui_light_gray, s:gui_med_gray_lo, s:cterm_light_gray, s:cterm_med_gray_lo]
+let s:N3 = [s:gui_light_gray, s:gui_med_gray_hi, s:cterm_light_gray, s:cterm_med_gray_hi] " inside text
+let g:airline#themes#angr#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
+let g:airline#themes#angr#palette.normal_modified = {
+      \ 'airline_c': [s:gui_orange, s:gui_med_gray_hi, s:cterm_orange, s:cterm_med_gray_hi, ''],
       \ }
 
-let pal = g:airline#themes#rex#palette
-for item in ['insert', 'replace', 'visual', 'inactive', 'ctrlp']
-  " why doesn't this work?
-  " get E713: cannot use empty key for dictionary
-  "let pal.{item} = pal.normal
-  exe "let pal.".item." = pal.normal"
-  for suffix in ['_modified', '_paste']
-    exe "let pal.".item.suffix. " = pal.normal"
-  endfor
-endfor
+" Insert mode
+let s:I1 = [s:gui_med_gray_hi, s:gui_blue, s:cterm_dark_gray, s:cterm_green]
+let s:I3 = [s:gui_blue, s:gui_med_gray_hi, s:cterm_blue, s:cterm_med_gray_hi] " inside text
+let g:airline#themes#angr#palette.insert = airline#themes#generate_color_map(s:I1, s:N2, s:I3)
+let g:airline#themes#angr#palette.insert_modified = copy(g:airline#themes#angr#palette.normal_modified)
+let g:airline#themes#angr#palette.insert_paste = {
+      \ 'airline_a': [s:gui_dark_gray, s:gui_orange, s:cterm_orange, s:cterm_med_gray_hi, ''],
+      \ }
 
+" Replace mode
+let g:airline#themes#angr#palette.replace = {
+      \ 'airline_a': [s:gui_dark_gray, s:gui_red, s:cterm_med_gray_hi, s:cterm_red, ''],
+      \ 'airline_c': [s:gui_red, s:gui_med_gray_hi, s:cterm_red, s:cterm_med_gray_hi, ''],
+      \ }
+let g:airline#themes#angr#palette.replace_modified = copy(g:airline#themes#angr#palette.insert_modified)
 
-" enable pointed arrow
-let g:airline_powerline_fonts = 1
+" Visual mode
+let s:V1 = [s:gui_dark_gray, s:gui_pink, s:cterm_green, s:cterm_pink]
+let s:V3 = [s:gui_pink, s:gui_med_gray_hi, s:cterm_pink, s:cterm_med_gray_hi]
+let g:airline#themes#angr#palette.visual = airline#themes#generate_color_map(s:V1, s:N2, s:V3)
+let g:airline#themes#angr#palette.visual_modified = copy(g:airline#themes#angr#palette.insert_modified)
+
+" Inactive window
+let s:IA = [s:gui_light_gray, s:gui_med_gray_hi, s:cterm_light_gray, s:cterm_med_gray_hi, '']
+let g:airline#themes#angr#palette.inactive = airline#themes#generate_color_map(s:IA, s:IA, s:IA)
+let g:airline#themes#angr#palette.inactive_modified = {
+      \ 'airline_c': [s:gui_orange, '', s:cterm_orange, '', ''],
+      \ }
+
+" Warnings
+let s:ER = airline#themes#get_highlight2(['ErrorMsg', 'bg'], ['ErrorMsg', 'fg'], 'bold')
+let g:airline#themes#angr#palette.normal.airline_warning = [
+ \ s:ER[1], s:ER[0], s:ER[3], s:ER[2]
+ \ ]
+let g:airline#themes#angr#palette.normal_modified.airline_warning =
+\ g:airline#themes#angr#palette.normal.airline_warning
+let g:airline#themes#angr#palette.insert.airline_warning =
+\ g:airline#themes#angr#palette.normal.airline_warning
+let g:airline#themes#angr#palette.insert_modified.airline_warning =
+\ g:airline#themes#angr#palette.normal.airline_warning
+let g:airline#themes#angr#palette.visual.airline_warning =
+\ g:airline#themes#angr#palette.normal.airline_warning
+let g:airline#themes#angr#palette.visual_modified.airline_warning =
+\ g:airline#themes#angr#palette.normal.airline_warning
+let g:airline#themes#angr#palette.replace.airline_warning =
+\ g:airline#themes#angr#palette.normal.airline_warning
+let g:airline#themes#angr#palette.replace_modified.airline_warning =
+\ g:airline#themes#angr#palette.normal.airline_warning
+
+" Errors
+let g:airline#themes#angr#palette.normal.airline_error = [
+ \ s:ER[1], s:ER[0], s:ER[3], s:ER[2]
+ \ ]
+let g:airline#themes#angr#palette.normal_modified.airline_error =
+\ g:airline#themes#angr#palette.normal.airline_error
+let g:airline#themes#angr#palette.insert.airline_error =
+\ g:airline#themes#angr#palette.normal.airline_error
+let g:airline#themes#angr#palette.insert_modified.airline_error =
+\ g:airline#themes#angr#palette.normal.airline_error
+let g:airline#themes#angr#palette.visual.airline_error =
+\ g:airline#themes#angr#palette.normal.airline_error
+let g:airline#themes#angr#palette.visual_modified.airline_error =
+\ g:airline#themes#angr#palette.normal.airline_error
+let g:airline#themes#angr#palette.replace.airline_error =
+\ g:airline#themes#angr#palette.normal.airline_error
+let g:airline#themes#angr#palette.replace_modified.airline_error =
+\ g:airline#themes#angr#palette.normal.airline_error
+
+" CtrlP
+if !get(g:, 'loaded_ctrlp', 0)
+  finish
+endif
+let g:airline#themes#angr#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(
+      \ [ s:gui_orange, s:gui_med_gray_hi, s:cterm_orange, s:cterm_med_gray_hi, '' ] ,
+      \ [ s:gui_orange, s:gui_med_gray_lo, s:cterm_orange, s:cterm_med_gray_lo, '' ] ,
+      \ [ s:gui_dark_gray, s:gui_green, s:cterm_dark_gray, s:cterm_green, 'bold' ] )
