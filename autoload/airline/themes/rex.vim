@@ -1,3 +1,4 @@
+
 " Color palette
 let s:gui_dark_gray = '#303030'
 let s:cterm_dark_gray = 44
@@ -14,11 +15,12 @@ let s:cterm_blue = 25
 let s:gui_purple = '#afafd7'
 let s:cterm_purple = 146
 let s:gui_orange = '#ffaf87'
-let s:cterm_orange = 216
+let s:cterm_orange = 39
 let s:gui_red = '#d78787'
 let s:cterm_red = 174
 let s:gui_pink = '#d7afd7'
 let s:cterm_pink = 133
+
 
 let g:airline#themes#angr#palette = {}
 
@@ -107,3 +109,16 @@ let g:airline#themes#angr#palette.ctrlp = airline#extensions#ctrlp#generate_colo
       \ [ s:gui_orange, s:gui_med_gray_hi, s:cterm_orange, s:cterm_med_gray_hi, '' ] ,
       \ [ s:gui_orange, s:gui_med_gray_lo, s:cterm_orange, s:cterm_med_gray_lo, '' ] ,
       \ [ s:gui_dark_gray, s:gui_green, s:cterm_dark_gray, s:cterm_green, 'bold' ] )
+
+
+function! AirlineInit()
+  " first define a new part for modified
+  call airline#parts#define('modified', {
+    \ 'raw': '%m',
+    \ 'accent': 'orange',
+    \ })
+
+  " then override the default layout for section c with your new part
+  let g:airline_section_c = airline#section#create(['%<', '%f', 'modified', ' ', 'readonly'])
+endfunction
+autocmd VimEnter * call AirlineInit()
