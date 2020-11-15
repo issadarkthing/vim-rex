@@ -1,7 +1,8 @@
 ## Rex
 My personal colorscheme for Vim
 
-![image](https://user-images.githubusercontent.com/50593529/97795051-99ddd680-1c3c-11eb-9eb1-d2829c6e8813.png)
+
+![image](https://user-images.githubusercontent.com/50593529/99178611-de469780-274f-11eb-8b28-07eee7a2347e.png)
 
 ### Installation
 #### vim-plug
