@@ -229,6 +229,12 @@ call s:Col('pythonStatement', 'blue')
 
 " Plugin =======================================================================
 
+" vim-gitgutter
+highlight GitGutterAdd ctermbg=black
+highlight GitGutterChange ctermbg=black
+highlight GitGutterDelete ctermbg=black
+highlight GitGutterChangeDelete ctermbg=black
+
 " GitGutter
 call s:Col('GitGutterAdd', 'green', s:linenr_background)
 call s:Col('GitGutterChange', 'cyan', s:linenr_background)
