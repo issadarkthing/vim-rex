@@ -81,10 +81,10 @@ highlight PmenuSbar  ctermbg=12
 highlight PmenuThumb ctermbg=2
 
 " Command line stuff.
-highlight ErrorMsg     ctermbg=233
+highlight ErrorMsg     ctermfg=1 ctermbg=233
 highlight Error        ctermfg=1 ctermbg=8 guifg=#c23127 guibg=#11151c
 highlight ModeMsg      ctermfg=4 guifg=#195466
-highlight WarningMsg   ctermfg=1 guifg=#c23127
+highlight WarningMsg   ctermfg=3 ctermbg=233 guifg=#c23127
 
 " Wild menu.
 " StatusLine determines the color of the non-active entries in the wild menu.
