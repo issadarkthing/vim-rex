@@ -95,9 +95,9 @@ highlight WildMenu     ctermfg=0 ctermbg=81 guifg=#d3ebe9 guibg=#33859E
 highlight Question     ctermfg=2 guifg=#2aa889
 
 " Tab line.
-highlight TabLineSel   ctermfg=15 ctermbg=4 guifg=#d3ebe9 guibg=#195466
-highlight TabLine      ctermfg=7 ctermbg=10 guifg=#99d1ce guibg=#091f2e
-highlight TabLineFill  ctermfg=0 ctermbg=0 guifg=#0c1014 guibg=#0c1014
+highlight TabLineSel   ctermfg=7 ctermbg=12 guifg=#d3ebe9 guibg=#195466
+highlight TabLine      ctermfg=7 ctermbg=239 guifg=#99d1ce guibg=#091f2e
+highlight TabLineFill  ctermfg=236 ctermbg=238 guifg=#0c1014 guibg=#0c1014
 
 " Spelling.
 highlight SpellBad     ctermfg=15 ctermbg=1 guifg=#d3ebe9 guibg=#c23127
