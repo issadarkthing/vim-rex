@@ -55,9 +55,10 @@ highlight Conceal ctermfg=6 ctermbg=0 guifg=#33859E guibg=#0c1014
 
 " TODO and similar tags.
 highlight Todo    ctermfg=13 ctermbg=0 guifg=#888ca6 guibg=#0c1014
+highlight Error   ctermfg=196 ctermbg=234 guifg=#888ca6 guibg=#0c1014
 
 " The column separating vertical splits.
-highlight VertSplit      ctermfg=4 ctermbg=8 guifg=#195466 guibg=#11151c
+highlight VertSplit      ctermfg=23 ctermbg=black guifg=#195466 guibg=#11151c
 highlight StatusLineNC   ctermfg=4 ctermbg=10 guifg=#195466 guibg=#091f2e
 
 " Matching parenthesis.
@@ -71,7 +72,7 @@ highlight Folded       ctermfg=7 ctermbg=23 guifg=#99d1ce guibg=#195466
 highlight FoldColumn   ctermfg=14 ctermbg=12 guifg=#599cab guibg=#0a3749
 
 " Searching.
-highlight Search       ctermfg=10 ctermbg=3 guifg=#091f2e guibg=#edb443
+highlight Search       ctermfg=black ctermbg=30 guifg=#091f2e guibg=#edb443
 highlight IncSearch    cterm=reverse gui=reverse
 
 " Popup menu.
