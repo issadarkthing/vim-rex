@@ -107,14 +107,15 @@ highlight SpellLocal   ctermfg=3 guifg=#edb443
 highlight SpellRare    ctermfg=15 ctermbg=5 guifg=#d3ebe9 guibg=#4e5166
 
 " Diffing.
-highlight DiffAdd      ctermfg=15 ctermbg=2 guifg=#d3ebe9 guibg=#2aa889
-highlight DiffChange   ctermfg=15 ctermbg=4 guifg=#d3ebe9 guibg=#195466
-highlight DiffDelete   ctermfg=15 ctermbg=1 guifg=#d3ebe9 guibg=#c23127
-highlight DiffText     ctermfg=15 ctermbg=6 guifg=#d3ebe9 guibg=#33859E
 highlight DiffAdded    ctermfg=2 guifg=#2aa889
 highlight DiffChanged  ctermfg=4 guifg=#195466
 highlight DiffRemoved  ctermfg=1 guifg=#c23127
 highlight DiffSubname  ctermfg=4 guifg=#195466
+
+highlight DiffDelete   ctermfg=black
+highlight DiffAdd      ctermfg=black ctermbg=29
+highlight DiffChange   ctermfg=black ctermbg=31
+highlight DiffText     ctermfg=black ctermbg=190
 
 " Directories (e.g. netrw).
 highlight Directory    ctermfg=6 guifg=#33859E
