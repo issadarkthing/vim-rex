@@ -166,3 +166,6 @@ highlight NeomakeErrorSign    ctermfg=1 ctermbg=8 guifg=#c23127 guibg=#11151c
 highlight NeomakeWarning      ctermfg=3 guifg=#edb443
 highlight NeomakeError        ctermfg=1 guifg=#c23127
 
+" quickscope
+highlight QuickScopePrimary   ctermfg=155 cterm=underline  guifg=#00C7DF gui=underline 
+highlight QuickScopeSecondary ctermfg=81 cterm=underline guifg=#eF5F70 gui=underline
