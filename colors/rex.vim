@@ -89,7 +89,7 @@ highlight WarningMsg   ctermfg=3 ctermbg=233 guifg=#c23127
 
 " Wild menu.
 " StatusLine determines the color of the non-active entries in the wild menu.
-highlight StatusLine   ctermfg=14 ctermbg=10 guifg=#599cab guibg=#091f2e
+highlight StatusLine   ctermfg=black ctermbg=NONE guifg=#599cab guibg=#091f2e
 highlight WildMenu     ctermfg=0 ctermbg=81 guifg=#d3ebe9 guibg=#33859E
 
 " The 'Hit ENTER to continue prompt'.
