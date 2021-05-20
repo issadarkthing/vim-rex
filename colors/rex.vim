@@ -123,24 +123,24 @@ highlight Directory    ctermfg=6 guifg=#33859E
 " nvim native lsp
 highlight LspDiagnosticsDefaultError           ctermfg=1
 highlight LspDiagnosticsDefaultWarning         ctermfg=3
-highlight LspDiagnosticsDefaultInformation     ctermfg=4
-highlight LspDiagnosticsDefaultHint            ctermfg=5
+highlight LspDiagnosticsDefaultInformation     ctermfg=white
+highlight LspDiagnosticsDefaultHint            ctermfg=6
 highlight LspDiagnosticsVirtualTextError       ctermfg=1
 highlight LspDiagnosticsVirtualTextWarning     ctermfg=3
-highlight LspDiagnosticsVirtualTextInformation ctermfg=4
-highlight LspDiagnosticsVirtualTextHint        ctermfg=5
+highlight LspDiagnosticsVirtualTextInformation ctermfg=white
+highlight LspDiagnosticsVirtualTextHint        ctermfg=6
 " highlight LspDiagnosticsUnderlineError         ctermfg=1
 " highlight LspDiagnosticsUnderlineWarning       ctermfg=3
-" highlight LspDiagnosticsUnderlineInformation   ctermfg=4
-" highlight LspDiagnosticsUnderlineHint          ctermfg=5
+" highlight LspDiagnosticsUnderlineInformation   ctermfg=white
+" highlight LspDiagnosticsUnderlineHint          ctermfg=6
 highlight LspDiagnosticsFloatingError          ctermfg=1
 highlight LspDiagnosticsFloatingWarning        ctermfg=3
-highlight LspDiagnosticsFloatingInformation    ctermfg=4
-highlight LspDiagnosticsFloatingHint           ctermfg=5
+highlight LspDiagnosticsFloatingInformation    ctermfg=white
+highlight LspDiagnosticsFloatingHint           ctermfg=6
 highlight LspDiagnosticsSignError              ctermfg=1
 highlight LspDiagnosticsSignWarning            ctermfg=3
-highlight LspDiagnosticsSignInformation        ctermfg=4
-highlight LspDiagnosticsSignHint               ctermfg=5
+highlight LspDiagnosticsSignInformation        ctermfg=white
+highlight LspDiagnosticsSignHint               ctermfg=6
 
 " Programming languages and filetypes ==========================================
 
