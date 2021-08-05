@@ -10,7 +10,7 @@ let g:colors_name = 'rex'
 
 
 " Everything starts here.
-highlight Normal ctermfg=7 guifg=#99d1ce guibg=#0c1014
+highlight Normal       guifg=#99d1ce guibg=NONE
 
 " Line, cursor and so on.
 highlight Cursor       ctermfg=8 ctermbg=7 guifg=#11151c guibg=#99d1ce
@@ -59,7 +59,6 @@ highlight Error   ctermfg=196 ctermbg=black guifg=#888ca6 guibg=#0c1014
 
 " The column separating vertical splits.
 highlight VertSplit      ctermfg=23 ctermbg=black guifg=#195466 guibg=#11151c
-highlight StatusLineNC   ctermfg=4 ctermbg=10 guifg=#195466 guibg=#091f2e
 
 " Matching parenthesis.
 highlight MatchParen   ctermfg=7 ctermbg=9 guifg=#99d1ce guibg=#d26937
@@ -76,10 +75,10 @@ highlight Search       ctermfg=black ctermbg=30 guifg=#091f2e guibg=#edb443
 highlight IncSearch    cterm=reverse gui=reverse
 
 " Popup menu.
-highlight Pmenu      ctermbg=12 ctermfg=white
-highlight PmenuSel   ctermbg=2 ctermfg=black
-highlight PmenuSbar  ctermbg=12
-highlight PmenuThumb ctermbg=2
+highlight Pmenu      guibg=#082134 guifg=#96cac1
+highlight PmenuSel   guibg=#2f81ab guifg=#11151c
+highlight PmenuSbar  guibg=#082134 guifg=#96cac1
+highlight PmenuThumb guibg=#96cac1
 
 " Command line stuff.
 highlight ErrorMsg     ctermfg=1 ctermbg=233
@@ -89,7 +88,7 @@ highlight WarningMsg   ctermfg=3 ctermbg=233 guifg=#c23127
 
 " Wild menu.
 " StatusLine determines the color of the non-active entries in the wild menu.
-highlight StatusLine   ctermfg=blue ctermbg=NONE guifg=#599cab guibg=#091f2e
+highlight StatusLine   guifg=#202328
 highlight WildMenu     ctermfg=0 ctermbg=81 guifg=#d3ebe9 guibg=#33859E
 
 " The 'Hit ENTER to continue prompt'.
