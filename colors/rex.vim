@@ -55,7 +55,7 @@ highlight Conceal ctermfg=6 ctermbg=0 guifg=#33859E guibg=#0c1014
 
 " TODO and similar tags.
 highlight Todo    ctermfg=13 ctermbg=0 guifg=#888ca6 guibg=#0c1014
-" highlight Error   ctermfg=196 ctermbg=black guifg=#bd3022 guibg=#0c1014
+highlight Error   ctermfg=196 ctermbg=black guifg=#2d5d70 guibg=NONE
 
 " The column separating vertical splits.
 highlight VertSplit      ctermfg=23 ctermbg=black guifg=#195466 guibg=#11151c
