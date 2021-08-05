@@ -18,9 +18,9 @@ highlight CursorLine   ctermbg=8 guibg=#11151c
 highlight CursorColumn ctermbg=8 guibg=#11151c
 
 " Sign column, line numbers.
-highlight LineNr       ctermfg=248 guifg=#195466 guibg=#11151c
+highlight LineNr       ctermfg=248 guifg=#195466 guibg=NONE
 highlight CursorLineNr ctermfg=14 ctermbg=8 guifg=#599cab guibg=#11151c
-highlight SignColumn   ctermbg=0 guibg=#11151c
+highlight SignColumn   ctermbg=0 guibg=NONE
 highlight ColorColumn  ctermbg=8 guibg=#11151c
 
 " Visual selection.
@@ -55,7 +55,7 @@ highlight Conceal ctermfg=6 ctermbg=0 guifg=#33859E guibg=#0c1014
 
 " TODO and similar tags.
 highlight Todo    ctermfg=13 ctermbg=0 guifg=#888ca6 guibg=#0c1014
-highlight Error   ctermfg=196 ctermbg=black guifg=#888ca6 guibg=#0c1014
+highlight Error   ctermfg=196 ctermbg=black guifg=#bd3022 guibg=#0c1014
 
 " The column separating vertical splits.
 highlight VertSplit      ctermfg=23 ctermbg=black guifg=#195466 guibg=#11151c
@@ -81,8 +81,7 @@ highlight PmenuSbar  guibg=#082134 guifg=#96cac1
 highlight PmenuThumb guibg=#96cac1
 
 " Command line stuff.
-highlight ErrorMsg     ctermfg=1 ctermbg=233
-highlight Error        ctermfg=1 ctermbg=8 guifg=#c23127 guibg=#11151c
+highlight ErrorMsg     ctermfg=1 ctermbg=233 guifg=#bd3022 guibg=black
 highlight ModeMsg      ctermfg=4 guifg=#195466
 highlight WarningMsg   ctermfg=3 ctermbg=233 guifg=#c23127
 
