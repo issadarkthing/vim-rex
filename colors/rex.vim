@@ -81,6 +81,9 @@ highlight PmenuSbar ctermbg=12 ctermfg=white
 highlight PmenuSel ctermbg=6 ctermfg=black
 highlight VertSplit ctermbg=NONE ctermfg=238
 
+" Git column
+highlight SignColumn ctermbg=NONE
+
 " Command line stuff.
 highlight ErrorMsg     ctermfg=1 ctermbg=233 guifg=#bd3022 guibg=black
 highlight ModeMsg      ctermfg=4 guifg=#195466
@@ -158,12 +161,6 @@ highlight pythonStatement ctermfg=4 guifg=#195466
 
 
 " Plugin =======================================================================
-
-" vim-gitgutter
-highlight GitGutterAdd          ctermbg=black
-highlight GitGutterChange       ctermbg=black
-highlight GitGutterDelete       ctermbg=black
-highlight GitGutterChangeDelete ctermbg=black
 
 
 " CtrlP
