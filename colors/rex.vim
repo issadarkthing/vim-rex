@@ -75,10 +75,11 @@ highlight Search       ctermfg=black ctermbg=30 guifg=#091f2e guibg=#edb443
 highlight IncSearch    cterm=reverse gui=reverse
 
 " Popup menu.
-highlight Pmenu      guibg=#082134 guifg=#96cac1
-highlight PmenuSel   guibg=#2f81ab guifg=#11151c
-highlight PmenuSbar  guibg=#082134 guifg=#96cac1
+highlight Pmenu ctermbg=12 ctermfg=white
 highlight PmenuThumb guibg=#96cac1
+highlight PmenuSbar ctermbg=12 ctermfg=white
+highlight PmenuSel ctermbg=6 ctermfg=black
+highlight VertSplit ctermbg=NONE ctermfg=238
 
 " Command line stuff.
 highlight ErrorMsg     ctermfg=1 ctermbg=233 guifg=#bd3022 guibg=black
@@ -139,6 +140,7 @@ highlight LspDiagnosticsSignError              ctermfg=1
 highlight LspDiagnosticsSignWarning            ctermfg=3
 highlight LspDiagnosticsSignInformation        ctermfg=white
 highlight LspDiagnosticsSignHint               ctermfg=6
+
 
 " Programming languages and filetypes ==========================================
 
