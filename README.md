@@ -10,9 +10,14 @@ suit my taste and also it is faster than the original colorscheme.
 ### Installation
 #### vim-plug
 ```
-Plug 'issadarkthing/rex-vim'
+Plug 'issadarkthing/vim-rex'
 ```
 #### vundle
 ```
-Plugin 'issadarkthing/rex-vim'
+Plugin 'issadarkthing/vim-rex'
+```
+
+After installing the package, add this to your `init.vim`:
+```
+colorscheme rex
 ```
